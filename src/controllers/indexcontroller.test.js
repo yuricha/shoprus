@@ -23,7 +23,7 @@ describe('testing for users', () => {
      /*cambiar data statica desde la segunda vez 
      */
      test('debe insertar nuevo usuario', async() => {
-        const data ={nombre:"usuariotest3", tipousuario:3,numerodocumento:"20041450",direccion:"avnudrgt"}
+        const data ={nombre:"usuariotest7", tipousuario:3,numerodocumento:"20041460",direccion:"a fdmdrgt"}
         const response = await request(app).post('/users').send(data);
         expect(response.statusCode).toEqual(201);         
      })
