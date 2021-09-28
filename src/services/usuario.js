@@ -11,6 +11,11 @@ async function getUserServiceById(id=0){
     const response = await pool.query('select * from usuario where idusuario=$1',[id]);
     return response;
 }
+
+async function getUserServiceByName(name=""){
+    const response = await pool.query('select * from usuario where nombre like $1',['%' + name + '%']);
+    return response;
+}
 async function createUserService(user) {
 
     const{nombre, tipousuario,numerodocumento,direccion}=user;
@@ -27,5 +32,6 @@ async function createUserService(user) {
 module.exports = {
     getUsersService,
     getUserServiceById,
+    getUserServiceByName,
     createUserService
   }
